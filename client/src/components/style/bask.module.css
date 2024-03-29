@@ -1,0 +1,92 @@
+.linkContainer {
+    width: 95%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: black;
+}
+
+.link {
+    text-decoration: underline;
+}
+
+.empty {
+  margin-top: 200px;
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.baskContainer {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.baskItem {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.baskTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+
+.baskDop {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 23px;
+}
+.image {
+  width: 400px;
+  height: 350px;
+}
+
+.bottom {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonBottom {
+    display: flex;
+    justify-content: end;
+    width: 200px;
+}
+.count {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.countCircle {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    color: gold;
+    text-align: center;
+    border-radius: 50%;
+}
+.button {
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    width: 150px;
+    font-size: 20px;
+    height: 30px;
+    margin-top: 20px;
+}

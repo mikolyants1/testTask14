@@ -1,0 +1,35 @@
+.container {
+    width: 100%;
+    background-color: black;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-width: 400px;
+}
+
+.logo {
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(40deg,gold,blueviolet);
+    font-weight: bold;
+    box-sizing: border-box;
+    padding-top: 8px;
+    font-size: 23px;
+    color: white;
+    text-align: center;
+}
+
+.name {
+  font-size: 34px;
+  font-weight: bold;
+}
+.link {
+    font-size: 23px;
+    text-decoration: underline;
+}
