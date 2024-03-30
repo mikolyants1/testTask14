@@ -1,5 +1,5 @@
 import { ILayoutProp } from '@/components/types/type'
-import Header from '@/components/ui/blocks/Header'
+import Header from '@/components/ui/views/home/Header'
 import React from 'react'
 
 function layout({children}:ILayoutProp) {

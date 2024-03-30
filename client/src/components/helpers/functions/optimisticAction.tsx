@@ -1,22 +1,22 @@
 import { EOptimisticType } from "@/components/types/enum";
-import { IOptimisticAction, IProduct, IUserBask } from "@/components/types/type";
+import { IOptimisticAction, IUserBask } from "@/components/types/type";
 
 export const optimisticAction = (
-    state:IUserBask[],
-    {payload,type}:IOptimisticAction
+  state:IUserBask[],
+  action:IOptimisticAction
  ):IUserBask[] =>{
-   switch (type) {
-    case EOptimisticType.CLEAR:{
-      if (Array.isArray(payload)){
+  switch (action.type) {
+    case EOptimisticType.CLEAR:
+      if (Array.isArray(action.payload)){
         return [];
-      }
-    };
-    case EOptimisticType.DEL:{
-      if (typeof payload == "number"){
-        return state.filter((i:IUserBask)=>i.product.id !== payload);
-      }
-    }
+      };
+    case EOptimisticType.DEL:
+      if (typeof action.payload == "number"){
+        return state.filter((i:IUserBask)=>(
+          i.product.id !== action.payload
+        ));
+      };
     default:
     return state;
-   }
+  }
 }

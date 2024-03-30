@@ -1,5 +1,6 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import { EOptimisticType } from "./enum";
+import { AxiosResponse } from "axios";
 
 export interface ILayoutProp {
     children:ReactNode
@@ -10,29 +11,36 @@ export interface IForm {
     password:string
 }
 
+export interface IUserProducts {
+    bask_id:number,
+    productId:number,
+    count:number,
+    user:IUser
+}
 export interface IField {
     name:"name"|"password"
 };
 
+export type Axios<T> = AxiosResponse<T>;
 
 export interface IProduct {
     id:number,
     title:string,
-    image:string,
+    imageCover:string,
     price:number,
     rating:number
 }
 
 export interface IUser {
-    id:number,
+    id:string,
     name:string,
-    pass:string,
-    products:number[]
+    password:string,
+    products:IUserProducts[]
 }
 
 export interface IProdBody {
-    prodId:number,
-    userId:number
+    productId:number,
+    userId:string
 }
 
 export interface IAuth {
@@ -41,7 +49,7 @@ export interface IAuth {
 }
 export interface UserBody {
     name:string,
-    pass:string,
+    password:string,
     isLogin?:boolean
 }
 
@@ -56,13 +64,14 @@ export interface IDataState {
     filter:IProduct[]
 }
 
+export interface IFilterPrice {
+    first:number,
+    second:number
+}
 export interface IFilterState {
     title:string,
     rating:number,
-    price:{
-      first:number,
-      second:number
-    }
+    price:IFilterPrice
 }
 export interface IUserBask {
     product:IProduct,
@@ -75,7 +84,7 @@ export interface IOptimisticAction {
 
 export interface IOptimisticContext {
     func:(action:IOptimisticAction)=>void,
-    userId:number
+    userId:string
 }
 export interface IContext {
   set:Dispatch<SetStateAction<IFilterState>>

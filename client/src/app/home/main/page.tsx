@@ -1,16 +1,14 @@
 
-import { getProducts } from "@/components/helpers/api/query/getProducts";
+import { getProducts } from "@/components/helpers/api/query/products/getProducts";
 import { IProduct } from "@/components/types/type";
 import styles from '@/components/style/main.module.css';
-import MainContainer from "@/components/ui/blocks/containers/MainContainer";
+import MainMapCard from "@/components/ui/views/home/main/MainMapCard";
 
 async function page():Promise<JSX.Element> {
   const products:IProduct[] = await getProducts();
   return (
     <main className={styles.container}>
-      <MainContainer
-        data={products}
-       />
+      <MainMapCard data={products} />
     </main>
   )
 }
