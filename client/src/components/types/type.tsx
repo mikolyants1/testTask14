@@ -86,6 +86,6 @@ export interface IOptimisticContext {
     func:(action:IOptimisticAction)=>void,
     userId:string
 }
-export interface IContext {
+export interface IFilterContext {
   set:Dispatch<SetStateAction<IFilterState>>
 }

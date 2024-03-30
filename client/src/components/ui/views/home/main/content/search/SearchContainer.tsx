@@ -3,7 +3,7 @@
 import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import styles from '@/components/style/main.module.css';
 import { IDataState, IFilterState, IProduct } from '@/components/types/type';
-import { Context } from '@/components/helpers/state/context';
+import { FilterContext } from '@/components/helpers/state/context';
 import { searchState } from '@/components/helpers/state/searchState';
 import PriceSelectContainer from './select/PriceSelectContainer';
 import RatingSelectCard from './select/RatingSelectCard';
@@ -39,7 +39,7 @@ function SearchContainer({set,base}:IProps):JSX.Element {
   }
 
   return (
-      <Context.Provider value={{set:setState}}>
+      <FilterContext.Provider value={{set:setState}}>
         <aside className={styles.search}>
           <div className={styles.title}>
             Filter Aside
@@ -65,7 +65,7 @@ function SearchContainer({set,base}:IProps):JSX.Element {
             drop options
           </div>
         </aside>
-      </Context.Provider>
+      </FilterContext.Provider>
   )
 }
 

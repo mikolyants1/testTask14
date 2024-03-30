@@ -1,5 +1,5 @@
-import { Context } from '@/components/helpers/state/context'
-import { IContext, IFilterState } from '@/components/types/type'
+import { FilterContext } from '@/components/helpers/state/context'
+import { IFilterContext, IFilterState } from '@/components/types/type'
 import styles from '@/components/style/main.module.css';
 import {memo, useContext} from 'react'
 
@@ -8,7 +8,7 @@ interface IProps {
 }
 
 function RatingSelectCard({rating}:IProps):JSX.Element {
-  const {set} = useContext<IContext>(Context);
+  const {set} = useContext<IFilterContext>(FilterContext);
   
   const click = (rating:number) => ():void => {
     set((prv:IFilterState)=>({...prv,rating}));

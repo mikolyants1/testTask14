@@ -1,5 +1,5 @@
-import { Context } from '@/components/helpers/state/context';
-import { IContext, IFilterState } from '@/components/types/type';
+import { FilterContext } from '@/components/helpers/state/context';
+import { IFilterContext, IFilterState } from '@/components/types/type';
 import React, { ChangeEvent, useContext } from 'react'
 
 interface IProps {
@@ -7,7 +7,7 @@ interface IProps {
 }
 
 function PriceSelectCard({name}:IProps):JSX.Element {
-  const {set} = useContext<IContext>(Context);
+  const {set} = useContext<IFilterContext>(FilterContext);
   const values:number[] = [0,20,40,60,80,100,120,140];
     
   const selectHandler = (e:ChangeEvent<HTMLSelectElement>):void => {
