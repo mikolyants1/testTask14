@@ -1,19 +1,18 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { TestBask } from "./bask.entity";
 
 @Entity()
 export class TestUser {
-   @PrimaryGeneratedColumn("increment")
-   id:number;
+   @PrimaryGeneratedColumn("uuid")
+   id:string;
 
    @Column("text",{nullable:false})
    name:string;
 
    @Column("text",{nullable:false})
-   pass:string;
+   password:string;
 
-   @Column("integer",{array:true})
-   products:number[];
+   @OneToMany(()=>TestBask,(prod:TestBask)=>prod.user)
+   products:TestBask[];
 
-   @Column("integer",{array:true})
-   count:number[]
 }

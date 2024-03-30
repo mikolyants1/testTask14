@@ -1,38 +1,36 @@
-import { IsArray, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsArray, IsNotEmpty, IsString } from 'class-validator';
 import { ProductDto } from './product.dto';
+import { BaskDto } from './bask.dto';
 
 export class UserDto {
-    @IsNumber()
-    @IsNotEmpty()
-    id:number;
+  @IsString()
+  @IsNotEmpty()
+  id: string;
 
-    @IsString()
-    @IsNotEmpty()
-    name:string;
+  @IsString()
+  @IsNotEmpty()
+  name: string;
 
-    @IsString()
-    @IsNotEmpty()
-    pass:string;
+  @IsString()
+  @IsNotEmpty()
+  password: string;
 
-    @IsArray()
-    products:number[];
-
-    @IsArray()
-    count:number[];
+  @IsArray()
+  products: BaskDto[];
 }
 
 export class UserBody {
-   name:string;
-   pass:string;
-   isLogin?:boolean;
+  name: string;
+  password: string;
+  isLogin?: boolean;
 }
 
 export class UserAuth {
-    user:UserDto|undefined;
-    success:boolean
+  user: UserDto | undefined;
+  success: boolean;
 }
 
 export class UserBask {
-    product:ProductDto;
-    count:number
+  product: ProductDto;
+  count: number;
 }

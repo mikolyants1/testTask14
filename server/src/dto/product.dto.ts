@@ -1,26 +1,26 @@
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class ProductDto {
-    @IsNumber()
-    @IsNotEmpty()
-    id:number;
+  @IsNumber()
+  @IsNotEmpty()
+  id: number;
 
-    @IsString()
-    @IsNotEmpty()
-    title:string;
+  @IsString()
+  @IsNotEmpty()
+  title: string;
 
-    @IsString()
-    image:string;
+  @IsString()
+  imageCover: string;
 
-    @IsNumber()
-    price:number;
+  @IsNumber()
+  price: number;
 
-    @IsNumber()
-    @IsNotEmpty()
-    rating:number
+  @IsNumber()
+  @IsNotEmpty()
+  rating: number;
 }
 
 export class ProdBody {
-    userId:number;
-    prodId:number
+  userId: string;
+  productId: number;
 }
