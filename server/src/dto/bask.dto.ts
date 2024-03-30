@@ -16,8 +16,3 @@ export class BaskDto {
 
     user:TestUser
 }
-
-export class ColumnConfig<T> {
-    key:string;
-    table:T
-  }
